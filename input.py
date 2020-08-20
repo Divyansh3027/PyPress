@@ -16,7 +16,6 @@ def loc(a='.'):
     elif os.isdir(a):
       isfile = False
       l2= os.dirname(a) + os.basename(a) +'.zip'
-      print(l2)
       if os.exists(l2) and os.isdir(l2):
         tmp = Err('Archive location is directory.')
         return tmp
@@ -29,6 +28,8 @@ def loc(a='.'):
     else:
       tmp = Err("Value is nither file nor directory")
       return tmp
+    
+    #Compress process come here
     
   else:
     tmp = Err("Location not exist")
