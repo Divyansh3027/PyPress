@@ -3,41 +3,55 @@ import os.path as os
 
 class Err:
   def __init__(self,*i):
-    self.li=l
+    self.li=i
     
   def get(self,i=-1):
     return self.li[:i]
+    
+  def hasErr(self):
+    return bool(len(self.li))
 
 def loc(a='.'):
   global os,shutil
+  a= os.abspath(a)
+  
   if os.exists(a):
     if os.isfile(a):
       isfile =True
     elif os.isdir(a):
       isfile = False
-      l2= os.dirname(a) + os.basename(a) +'.zip'
-      if os.exists(l2) and os.isdir(l2):
+      a2=a + '.zip'
+      if os.exists(a2) and os.isdir(a2):
         tmp = Err('Archive location is directory.')
         return tmp
         
       else:
-        shutil.make_archive(os.dirname(a) + os.basename(a),'zip',os.dirname(a) + os.basename(a))
-          
-      del l2
+        shutil.make_archive(a,'zip',a)
+        a=a2
     
     else:
       tmp = Err("Value is nither file nor directory")
       return tmp
     
-    #Compress process come here
+    import compress as c
+    m=c.compress(a,isfile)
+    import os as os
+    os.remove(a)
+    return m
     
   else:
     tmp = Err("Location not exist")
     return tmp
   
-  path = os.dirname(a)
-  name = os.basename(a)
-  del os
-  del shutil
+  return Err()
 
-loc('./.')
+"""
+#A simple example
+
+c=loc('./.')
+if c.hasErr():
+  print(c.get())
+
+# where ./. become as ..
+  
+"""
