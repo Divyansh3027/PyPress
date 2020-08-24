@@ -1,11 +1,13 @@
-import shutil as shutil
+import shutil
 import os.path as os
 
 class Err:
   def __init__(self,*i):
     self.li=i
     
-  def get(self,i=-1):
+  def get(self,i=None):
+    if i is None:
+      return self.li[:]
     return self.li[:i]
     
   def hasErr(self):
@@ -35,23 +37,23 @@ def loc(a='.'):
     
     import compress as c
     m=c.compress(a,isfile)
-    import os as os
-    os.remove(a)
+    if os.exists(a2):
+      import os as os
+      os.remove(a)
     return m
     
   else:
     tmp = Err("Location not exist")
     return tmp
   
-  return Err()
+  tmp = Err()
+  return tmp
 
 """
 #A simple example
-
-c=loc('./.')
+c=loc('..')
 if c.hasErr():
   print(c.get())
-
 # where ./. become as ..
   
 """
