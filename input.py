@@ -37,7 +37,7 @@ def loc(a='.'):
     
     import compress as c
     m=c.compress(a,isfile)
-    if os.exists(a2):
+    if os.exists(a+'.zip'):
       import os as os
       os.remove(a)
     return m
