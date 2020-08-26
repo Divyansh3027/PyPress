@@ -2,7 +2,7 @@
           |    Welcome    |
           |   dear user   |
           |   _________   |
-          |    PYPRESS    |
+          |    <b>PYPRESS</b>    |
           +---------------+
   
 Introduction
