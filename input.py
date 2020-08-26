@@ -18,14 +18,18 @@ def loc(a='.'):
   a= os.abspath(a)
   
   if os.exists(a):
+    already =False
     if os.isfile(a):
       isfile =True
     elif os.isdir(a):
       isfile = False
       a2=a + '.zip'
-      if os.exists(a2) and os.isdir(a2):
-        tmp = Err('Archive location is directory.')
-        return tmp
+      if os.exists(a2):
+        already =True
+        if os.isdir(a2):
+          tmp = Err('Archive location is directory.')
+          return tmp
+        
         
       else:
         shutil.make_archive(a,'zip',a)
@@ -37,7 +41,7 @@ def loc(a='.'):
     
     import compress as c
     m=c.compress(a,isfile)
-    if os.exists(a+'.zip'):
+    if already:
       import os as os
       os.remove(a)
     return m
