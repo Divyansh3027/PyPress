@@ -1,9 +1,12 @@
-          +---------------+
-          |    Welcome    |
-          |   dear user   |
-          |   _________   |
-          |    <b>PYPRESS</b>    |
-          +---------------+
+
+        +---------------+
+        |    Welcome    |
+        |   dear user   |
+        |   _________   |
+&emsp;&emsp;|&emsp;&ensp;<b>PYPRESS</b>&emsp;&ensp;|<br/>
+&emsp;&emsp;+-------------------------+<br/>
+<b>&emsp;&emsp;&emsp;PyPress 0.0.0</b><br/>
+
   
 Introduction
 ============
@@ -31,5 +34,8 @@ Files
 <br/>&emsp;press2(-)
 <br/>&emsp;&ensp;# determine changing slice and its occurance (except the first occured).
 <br/>&emsp;&ensp;# if occurance is bigger than specified no, it replaces that occurance appen cganged slice in list of press(-)
+<br/>&ensp;User.py :-
+<br/>&emsp;# A CLI (Command Line Interface) of PyPress.
+<br/>&emsp;# Just run this file, and givename of file and folder.
     
     
