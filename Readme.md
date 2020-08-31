@@ -3,9 +3,10 @@
         |    Welcome    |
         |   dear user   |
         |   _________   |
-&emsp;&emsp;|&emsp;&ensp;<b>PYPRESS</b>&emsp;&ensp;|<br/>
-&emsp;&emsp;+-------------------------+<br/>
+        |    PYPRESS    |
+        +---------------+
 <b>&emsp;&emsp;&emsp;PyPress 0.0.0</b><br/>
+
 
   
 Introduction

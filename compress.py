@@ -4,7 +4,7 @@ def press2(a,b,d,cm):
   top = d[0][b:b+a]
   count=0
   i=0
-  for p in range(b+a,len(d[0])-a):
+  for p in range(a,len(d[0])-a):
     if not(i==0):
       i -= 1
       continue
@@ -21,18 +21,10 @@ def press(data,path,head):
   data = data.replace('\\','\\\\')
   
   data = [data]
-  for i in [5,5,5,6,6,6,7,7,7]: # in list enter lengths of compressons
-    #           # Used only 4 to not let it go for long time atleast for few commits.
-    inc = []
-    mark = []
+  for i in [3,3,4,4,5,5,6,6,7,7]:
     print(len(data[0]))
     print()
     for j in range(len(data[0])-i):
-      if data[0][j:j+4] in inc:
-        print(j)
-        continue
-      inc.append(data[0][j:j+4])
-      
       press2(i,j,data,complete)
   data = data[0]
   
