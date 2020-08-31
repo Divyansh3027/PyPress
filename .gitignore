@@ -1,0 +1,10 @@
+#all files compressed by this program.
+*.cmp
+
+#python generated cache
+__pycache__/
+
+#all hidden files/folders except gitignore.
+.*
+.*/
+!.gitignore
