@@ -30,11 +30,8 @@ Files
 <br/>&emsp;&ensp;# calls press.
 <br/>&emsp;press(-)
 <br/>&emsp;&ensp;# change '\' to '\\' in data.
-<br/>&emsp;&ensp;# for every changing layer`s every change , call press2(-)
+<br/>&emsp;&ensp;# for every changing layer`s every change , identifies the better changes and implements them in data each time
 <br/>&emsp;&ensp;# assamble data for compressed file return to compress for writting.
-<br/>&emsp;press2(-)
-<br/>&emsp;&ensp;# determine changing slice and its occurance (except the first occured).
-<br/>&emsp;&ensp;# if occurance is bigger than specified no, it replaces that occurance appen cganged slice in list of press(-)
 <br/>&ensp;User.py :-
 <br/>&emsp;# A CLI (Command Line Interface) of PyPress.
 <br/>&emsp;# Just run this file, and givename of file and folder.

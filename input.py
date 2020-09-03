@@ -55,7 +55,7 @@ def loc(a='.'):
 
 """
 #A simple example
-c=loc('..')
+c=loc('input.py') => to compress input.py
 if c.hasErr():
   print(c.get())
 # where ./. become as ..
