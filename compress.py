@@ -25,7 +25,7 @@ def press(data):
           loop = i
           count +=1
           if count == 5:
-            data= data.replace(top,'\\'+str(len(complete)))
+            data= data.replace(top,'\\'+str(len(complete))+'.')
             complete.append(top)
             break
           
@@ -36,16 +36,15 @@ def press(data):
   
     
 
-def compress(f,is_file):
+def compress(f,ff,is_file,replace):
   f2=f
-  f=(f if is_file else f[:-4])
   loc = os.dirname(f)
-  with open(f,'r' if is_file else 'rb') as c :
+  with open(ff,'r' if is_file else 'rb') as c :
     inf=str(c.read())
     if os.exists(f+'.cmp'):
-      if os.isdir(f+'.cmp'):
-        return Err('a folder exist with compress output file name.\nSo unable to output compressed file')
-        
+      if not replace:
+        return Err('replace : False\ncompressed location already exist')
+  
   with open(f+'.cmp',"w") as c2:
     c2.write(str(int(is_file))+'\n')
     c,d = press(inf)
